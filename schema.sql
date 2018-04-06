@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS test;
+DROP DATABASE IF EXISTS mvp_phish;
 
-CREATE DATABASE test;
+CREATE DATABASE mvp_phish;
 
-USE test;
+USE mvp_phish;
 
 CREATE TABLE items (
   id int NOT NULL AUTO_INCREMENT,

@@ -1,9 +1,13 @@
 {
   "name": "hrnyc14-mvp-phish_stats",
   "version": "1.0.0",
-  "description": "more info then you ever think you wanted about any given show",
+  "description": "more info then you ever thought you wanted about any given show",
   "main": "server/index.js",
+  "engines": {
+    "node": "8.1.1"
+  },
   "scripts": {
+    "start": "npm install -g && webpack && node server/index.js",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
     "dev": "concurrently \"npm run react-dev\" \"npm run server-dev\""
@@ -18,12 +22,16 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.17.2",
     "concurrently": "^3.5.1",
     "express": "^4.15.0",
+    "lodash": "^4.17.5",
     "mysql": "^2.13.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
   },
   "repository": {
     "type": "git",
