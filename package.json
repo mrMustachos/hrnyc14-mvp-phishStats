@@ -1,0 +1,43 @@
+{
+  "name": "hrnyc14-mvp-phish_stats",
+  "version": "1.0.0",
+  "description": "more info then you ever think you wanted about any given show",
+  "main": "server/index.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js",
+    "dev": "concurrently \"npm run react-dev\" \"npm run server-dev\""
+  },
+  "author": "mrMustachos",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.15.0",
+    "mysql": "^2.13.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrMustachos/hrnyc14-mvp-phishStats.git"
+  },
+  "keywords": [
+    "phish",
+    "MVP",
+    "react",
+    "wook",
+    "mysql"
+  ],
+  "bugs": {
+    "url": "https://github.com/mrMustachos/hrnyc14-mvp-phishStats/issues"
+  },
+  "homepage": "https://github.com/mrMustachos/hrnyc14-mvp-phishStats#readme"
+}
