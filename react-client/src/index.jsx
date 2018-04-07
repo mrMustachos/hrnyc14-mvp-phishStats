@@ -50,7 +50,11 @@ class App extends Component {
 	}
 
 	clearSetList() {
-		this.setState({ setData : [] });
+		this.setState({
+			setData : [],
+			setListLoader: true,
+			testLoader: true
+		});
 	}
 
 	componentDidMount() { this.getAllShows(); }
