@@ -26,7 +26,7 @@ class Shows extends Component {
 		return (
 			<div>
 				{
-					this.props.setData.length === 0
+					this.props.testLoader
 					? ( this.state.listShows > 0
 						? <SetsByYear
 								shows={ this.props.shows }
@@ -39,10 +39,10 @@ class Shows extends Component {
 								listYear={ this.listShows }
 							/>
 						)
-					: <SetList
-							clearDate={ this.props.clearDate }
-							setData={ this.props.setData }
-						/>
+					: ( this.props.setListLoader
+						? <div className="loader"></div>
+						: <SetList clearDate={ this.props.clearDate } setData={ this.props.setData } />
+						)
 				}
 			</div>
 		);

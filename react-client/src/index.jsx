@@ -8,7 +8,9 @@ class App extends Component {
 		super(props);
 		
 		this.state = { 
-			items: [],
+			setListLoader: true,
+			testLoader: true,
+			startLoader: true,
 			allshows: [],
 			setData: []
 		}
@@ -19,9 +21,13 @@ class App extends Component {
 	}
 
 	getSetlist(id) {
+		this.setState({ testLoader : false });
 		axios.post('/api/setlist', { showid: id })
 			.then((response) => {
-				this.setState({ setData : response.data });
+				this.setState({
+					setData : response.data,
+					setListLoader: false
+				});
 			})
 			.catch((err) => {
 				console.error(err);
@@ -29,12 +35,13 @@ class App extends Component {
 		);
 	}
 
-	
-
 	getAllShows() {
 		axios.get('/api/allshows')
 			.then((response) => {
-				this.setState({ allshows : response.data });
+				this.setState({
+					allshows : response.data,
+					startLoader: false
+				});
 			})
 			.catch((err) => {
 				console.error(err);
@@ -53,13 +60,15 @@ class App extends Component {
 			<div className="container">
 				<h1>I CaN HaZ Phishez!!</h1>
 				{
-					this.state.allshows.length === 0
+					this.state.startLoader
 					? (<div className="loader"></div>)
 					: (<Shows
 							shows={ this.state.allshows }
 							getSetlist={ this.getSetlist }
 							setData={ this.state.setData }
 							clearDate={ this.clearSetList }
+							setListLoader={ this.state.setListLoader }
+							testLoader={ this.state.testLoader }
 						/>)
 				}
 			</div>
